@@ -117,8 +117,8 @@ input:focus{
 /** Card ***/
 
 .card{
-    height: 200px;
-    width: 400px;
+    max-height: 200px;
+    width: 100%;
     background-color: #e6e6e6;
     border-radius: 10px;
 }

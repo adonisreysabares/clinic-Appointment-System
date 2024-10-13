@@ -35,7 +35,7 @@ app.use(session({
     }
 }))
 
-app.use('/appointments', isAuthenticated, routerAppoint)
+app.use('/appointments', routerAppoint)
 app.use('/authentication', routerAuthentication)
 
 app.use((err, req, res, next) => {
