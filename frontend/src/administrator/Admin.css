@@ -1,0 +1,56 @@
+.dashboard{
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    width: 100%;
+}
+
+/*Top Navigation Bar*/
+
+.topNav{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: blanchedalmond;
+    height: 100vh;
+}
+
+.topNav > .logo{
+    padding-bottom: 30px;
+}
+
+.Profile{
+    height: 200px;
+    max-width: 200px;
+    border-radius: 100%;
+    margin: 0 0 20px 0;
+}
+
+.topNav > .listContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.topNav > .listContent > .nav-item{
+
+    padding: 40px 0 0 0;
+}
+
+.topNav > .listContent > .nav-item:hover{
+    color: aqua;
+}
+
+.overview{
+    background-color: #ccc;
+    height: 100vh;
+    width: 100%;
+}
+
+.overview > .overview-container{
+    margin:45px 30px 0 30px;
+    padding: 30px 30px 0 30px;
+}

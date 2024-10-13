@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.header{
+    height: 100vh;
+    padding: 0 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > .sideContent {
+    float: right;
+}
+
+.header > .article > h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 10rem;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: #069306;
+}
+
+.header > .article > p{
+    font-family: "Montserrat", sans-serif;
+
+}

@@ -1,0 +1,137 @@
+
+/*Top Navigation Bar*/
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f5f6fa; 
+    padding: 20px 10rem; 
+    color: #2f3640;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em; /* Logo size */
+    font-weight: bold; /* Logo font weight */
+}
+
+.logo > img{
+    max-height: 55px;
+    padding-right: 1rem;
+}
+
+ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+
+}
+
+a {
+    text-decoration: none;
+    color: #2f3640; 
+    font-size: 1em; 
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Input Style Component*/
+
+input{
+    padding: 13px;
+    width: 100%;
+    margin: 20px 0; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+label{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus{
+    border-color: #0097e6;
+    padding: 15px;
+    outline: none;
+}
+
+/*Button */
+
+.button{
+    background-color: #FF621F;
+    border-radius: 10px;
+    margin: 15px 0 0 0;
+    width: 10vw;
+    padding: 10px;
+    color: azure;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #FF621F;
+    padding: 11px;
+    border: 2px double black;
+}
+
+.sideNav > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.sideNav{
+    text-align: center;
+    background-color: #2f3640;
+    height: 100dvh;
+    width: 100%;
+}
+
+.sideNav > .img-container{
+    padding: 50px 0;
+}
+
+.sideNav > .img-container > img{
+    width: 35%;
+    border-radius: 50%;
+    border: 2px double red;
+}
+
+.sideNav > ul {
+    list-style: none;
+}
+
+.sideNav > ul > .nav-item{
+   
+    padding: 30px 0;
+}
+
+/** Card ***/
+
+.card{
+    height: 200px;
+    width: 400px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+}
+
+.card > .card-body{
+    padding: 20px;
+    display: flex;
+}
+
+.card > .card-body > div{
+    flex: 1;
+}
+
+.card > .card-body > div > h5{
+    font-size: 50px;
+}
