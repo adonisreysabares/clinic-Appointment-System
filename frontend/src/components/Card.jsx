@@ -4,10 +4,10 @@ import CardContent from '@mui/material/CardContent'
 import { Typography } from "@mui/material";
 import {makeStyles} from '@mui/styles'
 
-const useStyles = makeStyles({   
+const useStyles = makeStyles({
 
     root: {
-      minWidth: 275,
+      minWidth: 360,
       marginBottom: 16,
     },
     title: {

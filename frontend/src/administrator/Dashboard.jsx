@@ -7,6 +7,7 @@ export default function Dashboard(){
     const [error, setError] = useState()
     const [latest,setLatest] = useState()
     const [loading,setLoading] = useState()
+    const [user, setUser] = useState(0)
     const myData = [{
         icon: 'http://localhost:5173/src/assets/calendar.png',
         title: 'Total Appointments',
@@ -17,8 +18,8 @@ export default function Dashboard(){
         data: latest,
       },{
         icon: 'http://localhost:5173/src/assets/patient.png',
-        title: 'My Card Title3',
-        data: 'This is the card data3.',
+        title: 'Total Register User',
+        data: user,
       },
     ];
 

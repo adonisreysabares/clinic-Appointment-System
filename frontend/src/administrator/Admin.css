@@ -15,12 +15,12 @@
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background-color: blanchedalmond;
+    background-color: #f5f6fa;
     height: 100vh;
 }
 
 .topNav > .logo{
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .Profile{
@@ -28,6 +28,10 @@
     max-width: 200px;
     border-radius: 100%;
     margin: 0 0 20px 0;
+}
+
+.profiler-container > .profiler-name {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .topNav > .listContent{
@@ -40,12 +44,22 @@
     padding: 40px 0 0 0;
 }
 
+.topNav > .listContent > .nav-item > a{
+    color: #2f3640;
+}
+
 .topNav > .listContent > .nav-item:hover{
     color: aqua;
 }
+.logout{
+    background-color: transparent;
+    border: none;
+    font: 30px;
+    cursor: pointer;
+}
 
 .overview{
-    background-color: #ccc;
+    background-color: #dcdde1;
     height: 100vh;
     width: 100vw;
 }
@@ -63,3 +77,4 @@
     gap: 20px;
     width: 100%;
 }
+

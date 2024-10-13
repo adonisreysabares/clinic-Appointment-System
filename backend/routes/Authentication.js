@@ -21,7 +21,7 @@ loginRouter.post('/login', async(req,res)=>{
         if(user){
             const passwordValidation = await bcrypt.compare(password, user.password_hash)
             if(passwordValidation == 0){
-                req.session.userId = user.user_id
+                req.session.userId = user
                 req.session.user = user.username
                 req.session.role = user.role
                 switch(req.session.role){
@@ -127,6 +127,18 @@ loginRouter.post('/register', async(req,res)=>{
         res.status(500).json({
             message: 'An Internal Error occured',
             error: error.message
+        })
+    }
+})
+
+loginRouter.get('/protected', (req,res)=>{
+    if(req.session.userId){
+        res.status(200).json({
+            message: 'You are logged in',
+        })
+    }else{
+        res.status(401).json({
+            message: ' Unauthorized'
         })
     }
 })

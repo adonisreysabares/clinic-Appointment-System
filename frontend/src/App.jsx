@@ -1,7 +1,6 @@
-import React from 'react'
-import {Routes,Route} from 'react-router-dom'
-import { AuthProvider } from './authentication/AuthContext'
-import ProtectedRoute from './route/ProtectedRoute'
+import React, { useContext } from 'react'
+import {Routes,Route, Navigate} from 'react-router-dom'
+import { AuthContext, AuthProvider } from './authentication/AuthContext'
 import Home from './Home'
 import Admin from './administrator/Admin'
 import Login from './authentication/Login'
@@ -10,8 +9,17 @@ import Book from './frontPage/Book'
 import Contact from './frontPage/Contact'
 import Service from './frontPage/Service'
 import Error from './Error/404'
+import Loading from './components/Loading'
 import Unauthorize from './Error/Unauthorize'
 import './App.css'
+
+const PrivateRoute = ({ children }) =>{
+  const {isAuthenticated, loading} = useContext(AuthContext)
+
+  if(loading) return <Loading />
+
+  return isAuthenticated ? children: <Navigate to="/login" />
+}
 
 function App() {
   return (
@@ -25,9 +33,9 @@ function App() {
           <Route
             path='/dashboard'
             element={
-              <ProtectedRoute>
+              <PrivateRoute>
                 <Admin />
-              </ProtectedRoute>
+              </PrivateRoute>
             }
           />
           <Route path='/login' element={<Login />} />

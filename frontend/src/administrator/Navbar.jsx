@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../authentication/AuthContext';
 import Logo from '../assets/logo.png'
 import './Admin.css'
 
 export default function AdminNav({ setActiveSection }) {
+    const {logout} = useContext(AuthContext)
+
+    const handleLogout = async () =>{
+        await logout()
+    }
+
     return (
         <nav className='topNav'>
             <h1 className='logo'><img src={Logo} alt="Logo Here" />ODECOR</h1>
@@ -20,6 +27,10 @@ export default function AdminNav({ setActiveSection }) {
                 </li>
                 <li className='nav-item'>
                     <Link to="#" onClick={() => setActiveSection('user')}>User</Link>
+                </li>
+                <li className='nav-item'>
+                    <button className='logout' onClick={handleLogout}>Logout</button>
+
                 </li>
             </ul>
         </nav>

@@ -28,7 +28,7 @@ app.use(session({
     }),
     secret: "TOPSECRET",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
         secure: false, // Set to true if using HTTPS
         maxAge: 1000 * 60 * 60 * 24 // 1 day

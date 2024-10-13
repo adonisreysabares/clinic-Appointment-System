@@ -1,68 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import Input from '../components/Input'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from './AuthContext'
+import { AuthContext } from './AuthContext'
 import Logo from '../assets/logo.png'
 import './Form.css'
 
 export default function Login() {
-    const apiURL = "http://localhost:8080/authentication/login"
-    const {login} = useAuth()
-    const [isClicked,setClicked] = useState('password')
-    const [auth, setAuth] = useState({
-        email: '',
-        password: '',
-    })
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const { login } = useContext(AuthContext)
     const navigate = useNavigate()
+    const [error, setError] = useState('')
 
-    const onSubmit = async (e) => {
+    const handleSubmit = async(e)=>{
         e.preventDefault()
-        
-        
-        if (!auth.email || !auth.password) {
-            alert('Please enter both username and password.') 
-            return 
-        }
-    
         try {
-            const response = await axios.post(apiURL, auth, { withCredentials: true })
-            console.log(response.data)
-            login(response.data)
+            await login(username,password)
             navigate('/dashboard')
         } catch (error) {
-            console.error(error)
-            alert('An error occurred while logging in. Please try again.') 
+            setError(error.message)
         }
-    }
-
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setAuth({ ...auth, [name]: value })
-    }
-
-    const visiblePassword = (e) =>{
-        setClicked((prev) => prev ? 'text' : 'password')
     }
 
     return (
         <div className="form-container">
             <h1 className='logo'><img src={Logo} alt="Logo Here" />ODECOR</h1>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit}>
                 <Input
                     name="email"
                     label="Username"
                     text='text'
-                    onChange={handleChange}
+                    onChange={(e) => setUsername(e.target.value)}
                     placeholder='Username'
+                    value={username}
                 />
                 <Input
-                    onClick={visiblePassword}
                     name="password"
                     label="Password"
-                    text="password" // Specify 'password' to show the toggle button
-                    onChange={handleChange}
+                    text="password"
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
+                    value={password}
                 />
                 <button type='submit'>Login</button>
             </form>
